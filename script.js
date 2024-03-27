@@ -39,8 +39,14 @@ botoesGorjeta.forEach(botao => {
 })
 
 function receberPorcentagem(evento) {
-    console.log(evento.target.value)
+    botoesGorjeta.forEach(botao => {
+        botao.classList.remove("botao-ativo")
+
+        if(botao.value === evento.target.value){
+            botao.classList.add("botao-ativo")
+        }
+    })
     
-    //porcentagem = Number(evento.target.value) / 100
-    //console.log(porcentagem)
+    porcentagem = parseFloat(evento.target.value) / 100
+
 }
